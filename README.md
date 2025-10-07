@@ -1,1 +1,1 @@
-# video animetion
+# short video animation
