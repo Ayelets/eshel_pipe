@@ -12,26 +12,23 @@
       text-align: center;
     }
 
-    /* מצב ברירת מחדל (דסקטופ) */
+    /* מצב ברירת מחדל – דסקטופ */
     video {
       max-width: 100%;
+      max-height: 95vh;   /* לא יעבור את גובה החלון */
       height: auto;
     }
 
-    /* במובייל (עד 768px) הווידאו ימלא את כל המסך */
+    /* במובייל – ימלא 90% מהמסך */
     @media (max-width: 768px) {
       html, body {
-        height: 100%;
         margin: 0;
         padding: 0;
-        overflow: hidden;
       }
       video {
-        position: fixed;
-        inset: 0;
         width: 100vw;
-        height: 100dvh;    /* ממלא את כל מסך הטלפון */
-        object-fit: cover; /* כיסוי מלא - יחתוך אם צריך */
+        height: 90dvh;    /* 90% מהגובה הדינמי של המסך */
+        object-fit: contain; /* שומר על כל הווידאו בלי לחתוך */
       }
     }
   </style>
@@ -42,3 +39,4 @@
   </video>
 </body>
 </html>
+
